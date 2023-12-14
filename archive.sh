@@ -1,7 +1,13 @@
 #!/bin/bash
-# 59 23 * * * /home/dacracot/spy/archive.sh >> /home/dacracot/spy/log.out 2>> /home/dacracot/spy/log.err
+# 59 23 * * * $WHEREAMI/archive.sh >> $WHEREAMI/log.out 2>> $WHEREAMI/log.err
 # archive the day's images and deltas
 WHEN=`date '+%Y%m%d'`
-mkdir -p /home/dacracot/spy/shots/$WHEN
-mv -v /home/dacracot/spy/shots/shot-* /home/dacracot/spy/shots/$WHEN
-mv -v /home/dacracot/spy/delta-*.out.gz /home/dacracot/spy/shots/$WHEN
+# orient the execution directory
+if [ -z "$WHEREAMI" ]; then
+    pushd .. > /dev/null
+    export WHEREAMI=$PWD
+    popd > /dev/null
+fi
+mkdir -p $WHEREAMI/shots/$WHEN
+mv -v $WHEREAMI/shots/shot-* $WHEREAMI/shots/$WHEN
+mv -v $WHEREAMI/delta-*.out.gz $WHEREAMI/shots/$WHEN
