@@ -6,5 +6,4 @@
 
 - Dependencies
 	- apt-get install imagemagick
-	- apt-get install apache2
 	- apt-get install bc
