@@ -1,5 +1,5 @@
 #!/bin/bash
-# 0 5-21 * * * /home/dacracot/spy/adjustA.sh >> /home/dacracot/spy/log.out 2>> /home/dacracot/spy/log.err
+# 0 5-21 * * * $WHEREAMI/adjustThreshold.sh >> $WHEREAMI/log.out 2>> $WHEREAMI/log.err
 # create a new threshold by averaging the actual values from delta
 # orient the execution directory
 if [ -z "$WHEREAMI" ]; then

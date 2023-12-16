@@ -14,5 +14,5 @@ echo $COUNTER > $WHEREAMI/sequence
 # set the filename
 FILENAME=$WHEREAMI/shots/shot-$SEQ.jpg
 # take the picture with a timestamp
-raspistill -awb auto --exposure auto --ev 0 --rotation 270 --output $FILENAME --encoding jpg --quality 80 --nopreview --timeout 1000 --annotate 8 --annotate "%Y-%m-%d %H:%M"
+libcamera-still -awb auto --exposure normal --ev 0 --height 640 --width 856 --output $FILENAME --encoding jpg --quality 93 --nopreview --timeout 1000
 mogrify -format png -thumbnail 320x320 $FILENAME

@@ -8,7 +8,7 @@ fi
 # save the PID
 echo $$ > $WHEREAMI/monitor.pid
 # delay in second before next loop
-DELAY=1
+DELAY=120
 # trap kill and exit
 trap "exit" INT
 # loop every few seconds
@@ -16,8 +16,7 @@ while sleep $DELAY; do
 # save the previous snapshot
 mv -f $WHEREAMI/test.jpg $WHEREAMI/prev.jpg
 # take the test snapshot
-# raspistill -awb auto --exposure auto --ev 0 -h 640 -w 856 --output $WHEREAMI/test.jpg --encoding jpg --quality 100 --nopreview --timeout 1000
-raspistill -awb auto --exposure auto --ev 0 -h 640 -w 856 --output $WHEREAMI/crop.jpg --encoding jpg --quality 100 --nopreview --timeout 1000
+libcamera-still -awb auto --exposure normal --ev 0 --height 640 --width 856 --output $WHEREAMI/crop.jpg --encoding jpg --quality 93 --nopreview --timeout 1000
 convert $WHEREAMI/crop.jpg -crop 80x320+250+25 $WHEREAMI/test.jpg
 # threshold for Imagemagick compare
 THRESHOLD=`cat $WHEREAMI/threshold`
