@@ -1,9 +1,7 @@
 #!/bin/bash
 # orient the execution directory
 if [ -z "$WHEREAMI" ]; then
-    pushd .. > /dev/null
     export WHEREAMI=$PWD
-    popd > /dev/null
 fi
 # save the PID
 echo $$ > $WHEREAMI/monitor.pid
@@ -16,7 +14,7 @@ while sleep $DELAY; do
 # save the previous snapshot
 mv -f $WHEREAMI/test.jpg $WHEREAMI/prev.jpg
 # take the test snapshot
-libcamera-still -awb auto --exposure normal --ev 0 --height 640 --width 856 --output $WHEREAMI/crop.jpg --encoding jpg --quality 93 --nopreview --timeout 1000
+libcamera-still --awb auto --exposure normal --ev 0 --height 640 --width 856 --output $WHEREAMI/crop.jpg --encoding jpg --quality 93 --nopreview --timeout 1000
 convert $WHEREAMI/crop.jpg -crop 80x320+250+25 $WHEREAMI/test.jpg
 # threshold for Imagemagick compare
 THRESHOLD=`cat $WHEREAMI/threshold`
