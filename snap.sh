@@ -13,4 +13,5 @@ echo $COUNTER > $WHEREAMI/sequence
 FILENAME=$WHEREAMI/shots/shot-$SEQ.jpg
 # take the picture with a timestamp
 libcamera-still --awb auto --exposure normal --ev 0 --height 640 --width 856 --output $FILENAME --encoding jpg --quality 93 --nopreview --timeout 1000
-mogrify -format png -thumbnail 320x320 $FILENAME
+# create thumbnail
+# mogrify -format png -thumbnail 320x320 $FILENAME
