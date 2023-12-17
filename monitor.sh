@@ -6,7 +6,7 @@ fi
 # save the PID
 echo $$ > $WHEREAMI/monitor.pid
 # delay in seconds before next loop
-DELAY=120
+DELAY=60
 # trap kill and exit
 trap "exit" INT
 # loop every few seconds
