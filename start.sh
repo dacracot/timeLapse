@@ -1,7 +1,7 @@
 #!/bin/bash
 # launch and detach
-monitor.sh &
-echo "-------"
+lapse.sh &
 sleep 4
+echo "---------------------"
 # show if it is running
-ps -elf | grep monitor
+ps -elf | grep lapse

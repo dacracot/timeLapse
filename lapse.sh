@@ -4,7 +4,7 @@ if [ -z "$WHEREAMI" ]; then
     export WHEREAMI=$PWD
 fi
 # save the PID
-echo $$ > $WHEREAMI/monitor.pid
+echo $$ > $WHEREAMI/lapse.pid
 # delay in seconds before next loop
 DELAY=60
 # trap kill and exit
@@ -16,5 +16,5 @@ while sleep $DELAY; do
   WHEN=$(date '+%Y%m%d%H%M')
   echo "$WHEN"
   echo "----------------"
-  } > $WHEREAMI/monitor.out 2> $WHEREAMI/monitor.err
+  } > $WHEREAMI/lapse.out 2> $WHEREAMI/lapse.err
 done
