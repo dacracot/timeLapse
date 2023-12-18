@@ -9,5 +9,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # dangerous stuff
     rm shots/shot*
-	echo "0" > sequence
+	echo "0" > SEQUENCE
 fi

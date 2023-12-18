@@ -6,11 +6,11 @@ fi
 # save the PID
 echo $$ > $WHEREAMI/lapse.pid
 # delay in seconds before next loop
-DELAY=60
+WAIT=$(cat $WHEREAMI/DELAY)
 # trap kill and exit
 trap "exit" INT
 # loop every few seconds
-while sleep $DELAY; do
+while sleep $WAIT; do
   {
   $WHEREAMI/snap.sh 
   WHEN=$(date '+%Y%m%d%H%M')

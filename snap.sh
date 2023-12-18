@@ -4,11 +4,11 @@ if [ -z "$WHEREAMI" ]; then
     export WHEREAMI=$PWD
 fi
 # get the new number from the file storage
-COUNTER=$[$(cat $WHEREAMI/sequence) + 1]
+COUNTER=$[$(cat $WHEREAMI/SEQUENCE) + 1]
 # get an eight digit number
 SEQ=$(printf "%08d" $COUNTER)
 # push the counter back to the file storage
-echo $COUNTER > $WHEREAMI/sequence
+echo $COUNTER > $WHEREAMI/SEQUENCE
 # set the filename
 FILENAME=$WHEREAMI/shots/shot-$SEQ.jpg
 # take the picture with a timestamp

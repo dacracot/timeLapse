@@ -17,7 +17,7 @@
   - Create a video from the pictures.
 
 - reset.sh
-  - Erase the previous pictures and zero the sequence
+  - Erase the previous pictures and zero the SEQUENCE
 
 - snap.sh
   - Take a single picture.
