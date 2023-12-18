@@ -2,16 +2,32 @@
 
 **Taking time lapse pictures with a Raspberry Pi Zero 2 W**
 
-- start.sh to start taking pictures
-- stop.sh to stop taking pictures
+---
 
-- change DELAY in monitor.sh to adjust the time interval
+- start.sh
+  - Start the time lapse picture cycle.
+
+- stop.sh
+  - End the time lapse picture cycle.
+
+- lapse.sh
+  - The time lapse loop running in the background.
+
+- movie.sh
+  - Create a video from the pictures.
+
+- reset.sh
+  - Erase the previous pictures and zero the sequence
+
+- snap.sh
+  - Take a single picture.
+
+---
+
+- change DELAY in lapse.sh to adjust the time interval
   - DELAY should be chosen based upon the video quality expected
     - DELAY is in seconds
     - 60 frames per second video is good, 30 frames per second is ok
     - DELAY equal to 60 seconds at 60 frames per second means each hour actual is one second of video or 24 seconds per day
-
-- create a video using ffmpeg
-
-        ffmpeg -framerate 30 -i shots/shot-%08d.jpg -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4
-  
+    
+---
