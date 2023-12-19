@@ -7,7 +7,7 @@ select rate in people scene plant
 do
 	case $rate in
 		people)
-			echo "10" > DELAY
+			echo "5" > DELAY
 			break
 			;;
 		scene)   
