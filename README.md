@@ -29,5 +29,6 @@
     - Choose scene for one hour per second of video.
     - Choose plant for two hours per second of video.
     - Choose people for twelve minutes per second of video.
+    - Set DELAY by hand for other subjects.
     
 ---
