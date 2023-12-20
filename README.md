@@ -22,12 +22,12 @@
 - snap.sh
   - Take a single picture.
 
----
-
-- change DELAY in lapse.sh to adjust the time interval
-  - DELAY should be chosen based upon the video quality expected
+- frameRate.sh
+  - Set the frame rate for the time lapse.
     - DELAY is in seconds
-    - 60 frames per second video is good, 30 frames per second is ok
-    - DELAY equal to 60 seconds at 60 frames per second means each hour actual is one second of video or 24 seconds per day
+    - DELAY equal to 60 seconds at 60 frames per second means each hour actual is one second of video or 24 seconds per day.
+    - Choose scene for one hour per second of video.
+    - Choose plant for two hours per second of video.
+    - Choose people for twelve minutes per second of video.
     
 ---
