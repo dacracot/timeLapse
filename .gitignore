@@ -2,4 +2,5 @@
 *.pid
 *.out
 *.err
-*.jpg
+*.png
+*.gif
