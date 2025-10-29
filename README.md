@@ -29,3 +29,4 @@
     - `sudo apt install apache2`
     - `sudo apt install gifsicle`
     - `sudo apt install git`
+    - `sudo apt install imagemagick`
