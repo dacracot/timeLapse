@@ -2,5 +2,4 @@
 *.pid
 *.out
 *.err
-*.png
-*.gif
+DELAY
