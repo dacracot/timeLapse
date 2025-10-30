@@ -1,17 +1,13 @@
 #!/bin/bash
-# orient the execution directory
-if [ -z "$WHEREAMI" ]; then
-    export WHEREAMI=$PWD
-fi
-# get the new number from the file storage
-COUNTER=$[$(cat $WHEREAMI/SEQUENCE) + 1]
-# get an eight digit number
-SEQ=$(printf "%08d" $COUNTER)
-# push the counter back to the file storage
-echo $COUNTER > $WHEREAMI/SEQUENCE
-# set the filename
-FILENAME=$WHEREAMI/shots/shot-$SEQ.jpg
-# take the picture with a timestamp
-libcamera-still --awb auto --exposure normal --ev 0 --height 640 --width 856 --output $FILENAME --encoding jpg --quality 93 --nopreview --timeout 1000
-# create thumbnail
-# mogrify -format png -thumbnail 320x320 $FILENAME
+# take the picture
+rpicam-still --verbose=0 --immediate --nopreview --width 820 --height 616 --hdr --encoding jpg --output /tmp/frame.jpg
+# convert PNG to GIF
+convert /tmp/frame.jpg /tmp/frame.gif
+# add to animated gif
+gifsicle --colors 256 --batch /var/www/html/timeLapse.gif --append /tmp/frame.gif
+# debug
+# echo "---------------------"
+# gifsicle --info /tmp/frame.gif
+# echo "---------------------"
+# gifsicle --info /var/www/html/timeLapse.gif
+# echo "---------------------"
