@@ -5,9 +5,30 @@ if [ -z "$WHEREAMI" ]; then
 fi
 # check for initializations
 if [ ! -f $WHEREAMI/DELAY ]; then
-    echo "run frameRate.sh first"
-    exit
-fi
+# set delay between pictures
+echo "Looks like your first time."
+echo "What is your primary subject?"
+echo
+select rate in people scene plant
+do
+	case $rate in
+		people)
+			echo "5" > DELAY
+			break
+			;;
+		scene)   
+			echo "60" > DELAY
+			break
+			;;
+        plant)   
+			echo "120" > DELAY
+			break
+			;;
+        *)
+			echo "120" > DELAY
+			;;
+		esac
+donefi
 cmp -s $WHEREAMI/index.html /var/www/html/index.html
 SAME=$?
 if [ $SAME != 0 ]; then
@@ -22,4 +43,4 @@ lapse.sh &
 sleep 4
 echo "---------------------"
 # show if it is running
-ps -elf | grep lapse
+ps -elf | grep "/bin/bash ./lapse.sh"

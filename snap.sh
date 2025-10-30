@@ -4,9 +4,10 @@ rpicam-still --verbose=0 --immediate --nopreview --encoding png --output /tmp/fr
 # convert PNG to GIF
 convert /tmp/frame.png /tmp/frame.gif
 # add to animated gif
-gifsicle --batch /tmp/frame.gif --append /var/www/html/timeLapse.gif
+gifsicle --colors 256 --batch /var/www/html/timeLapse.gif --append /tmp/frame.gif
 # debug
-# gifsicle --info /var/www/html/timeLapse.gif
-
-
-
+echo "---------------------"
+gifsicle --info /tmp/frame.gif
+echo "---------------------"
+gifsicle --info /var/www/html/timeLapse.gif
+echo "---------------------"
