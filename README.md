@@ -28,6 +28,8 @@
     - End the time lapse picture cycle.
   - `lapse.sh`
     - The time lapse loop running in the background.
+  - `reset.sh`
+    - Reset everything as if start has never been run.
   - `snap.sh`
     - Take a single picture.
 
