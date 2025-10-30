@@ -13,7 +13,7 @@
     - Read the DELAY value and sleep for that duration.
     - Take a snapshot.
     	- Capture a JPG from the camera.
-    	- Convert the JPG to GIF.
+    	- Convert the JPG to GIF and add timestamp.
     	- Append the new single frame GIF to the animated GIF.
     - Log debug (by default commented out) and errors.
   - Stopping the process:
