@@ -1,4 +1,6 @@
 #!/bin/bash
+# ---------------------------------------------------
+{
 # orient the execution directory
 if [ -z "$WHEREAMI" ]; then
     export WHEREAMI=$PWD
@@ -13,8 +15,6 @@ trap "exit" INT
 while sleep $WAIT; do
   {
   $WHEREAMI/snap.sh 
-  WHEN=$(date '+%Y%m%d%H%M')
-  echo "$WHEN"
-  echo "----------------"
-  } > $WHEREAMI/lapse.out 2> $WHEREAMI/lapse.err
+  }
 done
+} >> ${WHEREAMI}/lapse.out 2>> ${WHEREAMI}/lapse.err
