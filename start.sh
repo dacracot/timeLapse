@@ -41,7 +41,8 @@ if [ ! -f /var/www/html/timeLapse.gif ]; then
 fi
 # launch and detach
 lapse.sh &
-sleep 4
+# debug
 # show if it is running
+# sleep 4
 # echo "---------------------"
 # ps -elf | grep "/bin/bash ./lapse.sh"
