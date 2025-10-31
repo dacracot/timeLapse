@@ -31,7 +31,11 @@ if [ ! -f $WHEREAMI/DELAY ]; then
 	done
 fi
 if [ ! -f $WHEREAMI/timeLapse.gif ]; then
-    cp $WHEREAMI/init.gif $WHEREAMI/timeLapse.gif
+    cp -v $WHEREAMI/init.gif $WHEREAMI/timeLapse.gif
+else
+	WHEN=$(date '+%Y-%m-%d-%H-%M')
+    cp -v $WHEREAMI/timeLapse.gif $WHEREAMI/timeLapse-${WHEN}.gif
+    cp -v $WHEREAMI/init.gif $WHEREAMI/timeLapse.gif
 fi
 # launch and detach
 lapse.sh &
