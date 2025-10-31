@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "If you have not saved your time lapse animation, your logs, and your delay setting, running this script will delete them all."
+echo "If you have not saved your logs, and your delay setting, running this script will delete them all."
 read -p "Do you wish to continue (y/n)?" YORN
 case "$YORN" in 
   y|Y ) echo "yes";;
