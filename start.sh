@@ -30,14 +30,8 @@ if [ ! -f $WHEREAMI/DELAY ]; then
 			esac
 	done
 fi
-cmp -s $WHEREAMI/index.html /var/www/html/index.html
-SAME=$?
-if [ $SAME != 0 ]; then
-    echo "copy index.html to /var/www/html first"
-    exit
-fi
-if [ ! -f /var/www/html/timeLapse.gif ]; then
-    cp $WHEREAMI/timeLapse.gif /var/www/html/timeLapse.gif
+if [ ! -f $WHEREAMI/timeLapse.gif ]; then
+    cp $WHEREAMI/init.gif $WHEREAMI/timeLapse.gif
 fi
 # launch and detach
 lapse.sh &

@@ -11,7 +11,7 @@ if [ -z "$WHEREAMI" ]; then
     export WHEREAMI=$PWD
 fi
 # 
-cp -v $WHEREAMI/timeLapse.gif /var/www/html/timeLapse.gif
+cp -v $WHEREAMI/init.gif $WHEREAMI/timeLapse.gif
 rm -v $WHEREAMI/lapse.pid
 rm -v $WHEREAMI/lapse.out
 rm -v $WHEREAMI/lapse.err

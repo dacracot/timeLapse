@@ -22,24 +22,32 @@
 ---
 
 - **Scripts**:
-  - `start.sh`
-    - Start the time lapse picture cycle.
-  - `stop.sh`
-    - End the time lapse picture cycle.
   - `lapse.sh`
     - The time lapse loop running in the background.
   - `reset.sh`
     - Reset everything as if start has never been run.
   - `snap.sh`
     - Take a single picture.
+  - `start.sh`
+    - Start the time lapse picture cycle.
+  - `stop.sh`
+    - End the time lapse picture cycle.
 
 ---
 
 - **Files**:
-  - `index.html`
-    - Place this file in /var/www/html/.
   - `DELAY`
     - Storage for your frame rate choice.
+  - `init.gif`
+    - Initial GIF with the animation parameters.
+  - `lapse.err`
+    - Error log from the processing.
+  - `lapse.out`
+    - Output log from the processing.
+  - `lapse.pid`
+    - Process ID for the processing.
+  - `timeLapse.gif`
+    - Resulting animated GIFF.
 
 ---
 
@@ -49,3 +57,7 @@
     - `sudo apt install gifsicle`
     - `sudo apt install git`
     - `sudo apt install imagemagick`
+
+
+
+
